@@ -3,8 +3,9 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 from newspaper import Article
 import torch
 
-model = AutoModelForSeq2SeqLM.from_pretrained("model")
-tokenizer = AutoTokenizer.from_pretrained("tokenizer")
+# Load model
+tokenizer = AutoTokenizer.from_pretrained("skripsi-summarization-1234/mbart-large-50-finetuned-xlsum-summarization")
+model = AutoModelForSeq2SeqLM.from_pretrained("skripsi-summarization-1234/mbart-large-50-finetuned-xlsum-summarization")
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model.to(device)
