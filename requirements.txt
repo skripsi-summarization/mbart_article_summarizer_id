@@ -1,5 +1,5 @@
 streamlit
-transformers
+transformers==4.36.2
 torch
 googletrans==4.0.0-rc1
 newspaper3k
