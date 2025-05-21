@@ -34,14 +34,14 @@ if url:
         st.write(text)
 
         with st.spinner("🤖 Summarizing with mBART..."):
-            tokenizer.src_lang = "id_XX"
+            tokenizer.src_lang = "id_ID"
             inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=512, padding="longest")
             summary_ids = model.generate(
                 **inputs,
                 max_length=128,
                 num_beams=4,
                 early_stopping=True,
-                forced_bos_token_id=tokenizer.lang_code_to_id["id_XX"]
+                forced_bos_token_id=tokenizer.lang_code_to_id["id_ID"]
             )
             summary = tokenizer.decode(summary_ids[0], skip_special_tokens=True)
 
