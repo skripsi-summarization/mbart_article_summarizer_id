@@ -8,7 +8,8 @@ import torch
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Load model
-model = MBartForConditionalGeneration.from_pretrained("skripsi-summarization-1234/mbart-large-50-finetuned-xlsum-summarization").to(device)
+model = MBartForConditionalGeneration.from_pretrained("skripsi-summarization-1234/mbart-large-50-finetuned-xlsum-summarization")
+model = model.to(device)
 tokenizer = MBart50TokenizerFast.from_pretrained("skripsi-summarization-1234/mbart-large-50-finetuned-xlsum-summarization")
 
 # Streamlit layout improvements
