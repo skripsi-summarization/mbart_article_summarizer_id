@@ -172,7 +172,7 @@ if "article_text" in st.session_state and st.session_state.article_text:
 if summarize_btn:
     if "article_text" in st.session_state and st.session_state.article_text:
         try:
-            with st.spinner("🔄 Memproses artikel dengan mBART..."):
+            with st.spinner("🔄 Memproses artikel..."):
                 tokenizer.src_lang = "id_ID"
                 inputs = tokenizer(
                     st.session_state.article_text,
